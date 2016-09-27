@@ -1,0 +1,12 @@
+li {
+  list-style: none;
+	height: 180px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+img {
+	width: 320px;
+}
+img.cut {
+	margin-top: -30px;
+}
