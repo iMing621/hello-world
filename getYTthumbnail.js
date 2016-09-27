@@ -27,11 +27,11 @@ function appendThumbnail(imgList) {
     }
 
     var imgAry = new Array(
-        "0",
-        "1",
-        "2",
-        "3",
-        "default",
+        //"0",
+        //"1",
+        //"2",
+        //"3",
+        //"default",
         "hqdefault",
         "mqdefault",
         "sddefault",
@@ -39,15 +39,20 @@ function appendThumbnail(imgList) {
     );
     for (ix = 0; ix < imgAry.length; ix++) {
         var li = document.createElement("li");
-        var br = document.createElement("br");
-        var txt = document.createTextNode(ix);
+        //var br = document.createElement("br");
+        var txt = document.createTextNode("&nbsp;" + imgAry[ix]);
         var img = document.createElement("img");
         var imgSrc = "http://img.youtube.com/vi/" + videoID + "/" + imgAry[ix] + ".jpg";
-        img.id = "thumbnail" + ix;
+        img.id = "thumbnail-" + ix;
         img.src = imgSrc;
-        li.appendChild(txt);
-        li.appendChild(br);
+		if (imgAry[ix] == "mqdefault" || imgAry[ix] == "maxresdefault"){
+			img.className = "nocut";
+		}else{
+			img.className = "cut";
+		}
+		//li.appendChild(br);
         li.appendChild(img);
+        li.appendChild(txt);
         imgList.appendChild(li);
     }
 
