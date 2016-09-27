@@ -40,7 +40,7 @@ function appendThumbnail(imgList) {
     for (ix = 0; ix < imgAry.length; ix++) {
         var li = document.createElement("li");
         //var br = document.createElement("br");
-        var txt = document.createTextNode("&nbsp;" + imgAry[ix]);
+        var txt = document.createTextNode(" " + imgAry[ix]);
         var img = document.createElement("img");
         var imgSrc = "http://img.youtube.com/vi/" + videoID + "/" + imgAry[ix] + ".jpg";
         img.id = "thumbnail-" + ix;
