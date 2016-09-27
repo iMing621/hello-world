@@ -32,27 +32,27 @@ function appendThumbnail(imgList) {
         //"2",
         //"3",
         //"default",
-        "hqdefault",
-        "mqdefault",
-        "sddefault",
+        //"hqdefault",
+        //"mqdefault",
+        //"sddefault",
         "maxresdefault"
     );
     for (ix = 0; ix < imgAry.length; ix++) {
         var li = document.createElement("li");
         //var br = document.createElement("br");
-        var txt = document.createTextNode(" " + imgAry[ix]);
+        //var txt = document.createTextNode(" " + imgAry[ix]);
         var img = document.createElement("img");
         var imgSrc = "http://img.youtube.com/vi/" + videoID + "/" + imgAry[ix] + ".jpg";
         img.id = "thumbnail-" + ix;
         img.src = imgSrc;
-		if (imgAry[ix] == "mqdefault" || imgAry[ix] == "maxresdefault"){
-			img.className = "nocut";
-		}else{
-			img.className = "cut";
-		}
+	    if (imgAry[ix] == "mqdefault" || imgAry[ix] == "maxresdefault"){
+		    img.className = "nocut";
+	    }else{
+		    img.className = "cut";
+	    }
 		//li.appendChild(br);
         li.appendChild(img);
-        li.appendChild(txt);
+        //li.appendChild(txt);
         imgList.appendChild(li);
     }
 
