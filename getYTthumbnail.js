@@ -25,11 +25,11 @@ function appendThumbnail(content) {
     } else {
         videoID = ytUrl;
     }
-	
-	var img = document.createElement("img");
-	var imgSrc = "http://img.youtube.com/vi/" + videoID + "/maxresdefault.jpg";
-	img.src = imgSrc;
-	content.append(img);
+
+    var img = document.createElement("img");
+    var imgSrc = "http://img.youtube.com/vi/" + videoID + "/maxresdefault.jpg";
+    img.src = imgSrc;
+    content.append(img);
 
     document.getElementById('yt_URL').value = "";
 }
