@@ -1,12 +1,12 @@
 li {
   list-style: none;
-	height: 180px;
+	height: 270px;
 	overflow: hidden;
 	margin-bottom: 10px;
 }
 img {
-	width: 320px;
+	width: 480px;
 }
 img.cut {
-	margin-top: -30px;
+	margin-top: -45px;
 }
