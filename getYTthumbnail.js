@@ -1,17 +1,17 @@
 function getURL() {
-    var imgList = document.getElementById('img-list');
-    if (imgList) {
-        if (imgList.hasChildNodes()) {
-            while (imgList.firstChild) {
-                imgList.removeChild(imgList.firstChild);
+    var content = document.getElementById('content');
+    if (content) {
+        if (content.hasChildNodes()) {
+            while (content.firstChild) {
+                content.removeChild(content.firstChild);
             }
         }
 
-        appendThumbnail(imgList);
+        appendThumbnail(content);
     }
 }
 
-function appendThumbnail(imgList) {
+function appendThumbnail(content) {
     var ytUrl = document.getElementById('yt_URL').value;
     var videoID = "";
     if (ytUrl.indexOf('watch?v=') > -1) {
@@ -25,37 +25,11 @@ function appendThumbnail(imgList) {
     } else {
         videoID = ytUrl;
     }
-
-    var imgAry = new Array(
-        //"0",
-        //"1",
-        //"2",
-        //"3",
-        //"default",
-        //"hqdefault",
-        //"mqdefault",
-        //"sddefault",
-        "maxresdefault"
-    );
-    for (ix = 0; ix < imgAry.length; ix++) {
-        //var li = document.createElement("li");
-        //var br = document.createElement("br");
-        //var txt = document.createTextNode(" " + imgAry[ix]);
-        var img = document.createElement("img");
-        var imgSrc = "http://img.youtube.com/vi/" + videoID + "/" + imgAry[ix] + ".jpg";
-        img.id = "thumbnail-" + ix;
-        img.src = imgSrc;
-	    if (imgAry[ix] == "mqdefault" || imgAry[ix] == "maxresdefault"){
-			img.className = "nocut";
-	    }else{
-			img.className = "cut";
-	    }
-		//li.appendChild(br);
-        //li.appendChild(img);
-        //li.appendChild(txt);
-        //imgList.appendChild(li);
-		imgList.append(img);
-    }
+	
+	var img = document.createElement("img");
+	var imgSrc = "http://img.youtube.com/vi/" + videoID + "/maxresdefault.jpg";
+	img.src = imgSrc;
+	content.append(img);
 
     document.getElementById('yt_URL').value = "";
 }
