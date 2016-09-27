@@ -29,7 +29,7 @@ function appendThumbnail(content) {
     var img = document.createElement("img");
     var imgSrc = "http://img.youtube.com/vi/" + videoID + "/maxresdefault.jpg";
     img.src = imgSrc;
-    content.append(img);
+    content.appendChild(img);
 
     document.getElementById('yt_URL').value = "";
 }
