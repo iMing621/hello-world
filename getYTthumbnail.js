@@ -38,7 +38,7 @@ function appendThumbnail(imgList) {
         "maxresdefault"
     );
     for (ix = 0; ix < imgAry.length; ix++) {
-        var li = document.createElement("li");
+        //var li = document.createElement("li");
         //var br = document.createElement("br");
         //var txt = document.createTextNode(" " + imgAry[ix]);
         var img = document.createElement("img");
@@ -46,14 +46,15 @@ function appendThumbnail(imgList) {
         img.id = "thumbnail-" + ix;
         img.src = imgSrc;
 	    if (imgAry[ix] == "mqdefault" || imgAry[ix] == "maxresdefault"){
-		    img.className = "nocut";
+			img.className = "nocut";
 	    }else{
-		    img.className = "cut";
+			img.className = "cut";
 	    }
 		//li.appendChild(br);
-        li.appendChild(img);
+        //li.appendChild(img);
         //li.appendChild(txt);
-        imgList.appendChild(li);
+        //imgList.appendChild(li);
+		imgList.append(img);
     }
 
     document.getElementById('yt_URL').value = "";
